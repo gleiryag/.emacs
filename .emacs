@@ -30,20 +30,25 @@
 (straight-use-package 'clojure-mode)
 (straight-use-package 'flycheck)
 (straight-use-package 'cider)
-
+(straight-use-package 'yaml-mode)
+(straight-use-package 'flycheck-yamllint)
+(straight-use-package 'indent-tools)
+(straight-use-package 'hydra)
 
 (load-theme 'doom-tomorrow-night t)
 
 (projectile-mode +1)
 (yas-global-mode 1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map) 
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map) 
 (global-set-key (kbd "<backtab>") 'company-complete)
+(global-set-key (kbd "C-c >") 'indent-tools-hydra/body)
 
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
 (electric-pair-mode 1)
+
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
