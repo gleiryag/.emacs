@@ -19,6 +19,12 @@
 (load bootstrap-file nil 'nomessage))
 (setq straight-recipe-repositories '(melpa org-elpa gnu-elpa emacsmirror))
 
+(setq load-path (cons "/usr/local/share/mdk" load-path))
+(autoload 'mixal-mode "mixal-mode" t)
+(add-to-list 'auto-mode-alist '("\\.mixal\\'" . mixal-mode))
+
+(autoload 'mixvm "mixvm" "mixvm/gud interaction" t)
+
 (straight-use-package 'doom-themes)
 (straight-use-package 'projectile)
 (straight-use-package 'eshell-fixed-prompt)
@@ -34,7 +40,7 @@
 (straight-use-package 'flycheck-yamllint)
 (straight-use-package 'indent-tools)
 (straight-use-package 'hydra)
-
+(straight-use-package 'tide)
 (load-theme 'doom-tomorrow-night t)
 
 (projectile-mode +1)
@@ -57,6 +63,7 @@
 (setq eshell-where-to-jump 'begin)
 (setq eshell-review-quick-commands nil)
 (setq eshell-smart-space-goes-to-end t)
+
 
 (yas-reload-all)
 
