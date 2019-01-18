@@ -23,6 +23,8 @@
 (autoload 'mixal-mode "mixal-mode" t)
 (add-to-list 'auto-mode-alist '("\\.mixal\\'" . mixal-mode))
 
+
+
 (autoload 'mixvm "mixvm" "mixvm/gud interaction" t)
 
 (straight-use-package 'doom-themes)
@@ -41,8 +43,9 @@
 (straight-use-package 'indent-tools)
 (straight-use-package 'hydra)
 (straight-use-package 'tide)
+(straight-use-package 'sml-mode)
 (load-theme 'doom-tomorrow-night t)
-
+(straight-use-package 'js3-mode)
 (projectile-mode +1)
 (yas-global-mode 1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
@@ -63,7 +66,7 @@
 (setq eshell-where-to-jump 'begin)
 (setq eshell-review-quick-commands nil)
 (setq eshell-smart-space-goes-to-end t)
-
+(setq sml-program-name "/usr/lib/custom/smlnj/bin/sml")
 
 (yas-reload-all)
 
