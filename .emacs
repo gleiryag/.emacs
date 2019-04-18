@@ -44,11 +44,12 @@
 (straight-use-package 'hydra)
 (straight-use-package 'tide)
 (straight-use-package 'sml-mode)
+(straight-use-package 'web-mode)
+
 (load-theme 'doom-tomorrow-night t)
 (straight-use-package 'js3-mode)
 (projectile-mode +1)
 (yas-global-mode 1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map) 
 (global-set-key (kbd "<backtab>") 'company-complete)
 (global-set-key (kbd "C-c >") 'indent-tools-hydra/body)
