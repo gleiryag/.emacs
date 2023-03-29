@@ -53,7 +53,6 @@
 (straight-use-package 'treemacs)
 (straight-use-package 'zenburn-theme)
 (straight-use-package 'elpy)
-(straight-use-package 'pyenv-mode)
 (straight-use-package 'prettier-js)
 (straight-use-package 'haskell-mode)
 (straight-use-package 'terraform-mode)
@@ -64,6 +63,8 @@
 (straight-use-package 'which-key)
 (straight-use-package 'purescript-mode)
 (straight-use-package 'psc-ide)
+(straight-use-package 'visual-regexp-steroids)
+(straight-use-package 'ample-zen-theme)
 
 (global-set-key (kbd "C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -73,7 +74,6 @@
 
 (defvar inferior-lisp-program "sbcl")
 
-(load-theme 'doom-tomorrow-night t)
 (straight-use-package 'js3-mode)
 (projectile-mode +1)
 (yas-global-mode 1)
@@ -131,9 +131,8 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
-(load-theme 'zenburn t)
+(load-theme 'ample-zen t)
 (elpy-enable)
-(pyenv-mode)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -183,4 +182,12 @@
 (defvar psc-ide-use-npm t)
 
 (which-key-mode)
+
+(setq help-echo-delay 20)
+
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+
+(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 ;;; .emacs ends here
